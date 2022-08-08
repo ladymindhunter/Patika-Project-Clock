@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kodluyoruz Javascript Ödev 1</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="title">
+        <h1>Kodluyoruz</h1>
+    </div>
+
+    <div id="guest">
+        <h2>Merhaba, <span>İsim</span>! Hoşgeldin !</h2>
+    </div>
+    
+    <div id="desc">
+        
+        <span id="time" onload="showTime()">Saat Bilgisi</span> tarihinde <b>Kodluyoruz Front End Web Development Patikası'</b>nın Javascript bölümü 1.ödevindesiniz..</div>
+
+   
+    <script>
+        //İsim aldık.
+        const isim = prompt("Lütfen adınızı giriniz");    
+        //dom ile atadık.
+        let guest = document.querySelector('#guest span');
+        guest.textContent = isim;
+        
+      
+        let saatBilgisi = document.querySelector('#desc #time');
+        saatBilgisi.innerHTML = showTime();
+
+        //console.log(showTime());
+       
+
+        
+        function showTime() {
+            var tarih=new Date();
+            
+            var saat=tarih.getHours();
+            var dakika=tarih.getMinutes();
+            var saniye=tarih.getSeconds();	
+	    
+            let info = saat+":"+dakika+":"+saniye;
+
+            return info;
+            
+        }
+
+    </script>
+</body>
+</html>
